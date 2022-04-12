@@ -40,7 +40,7 @@ sha256sums=('1463cdfa223088610dd65d3eadeffa44ec49746091b8ae8ddac6f3070d17df86'
             '79266c6cc970733fd35881d9a8f0a74c25c00b4d81741b8d4bba6827c48f7c78'
             'e9527ad81d5b1821a7b17c56cb3abaec85785563f51e448cb3c06f1c68e2966f')
 
-export KBUILD_BUILD_HOST=archlinux
+export KBUILD_BUILD_HOST=laniakea
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
@@ -54,7 +54,7 @@ prepare() {
   echo "Setting version..."
   scripts/setlocalversion --save-scmversion
   echo "-$pkgrel" > localversion.10-pkgrel
-  echo "${pkgbase#linux}" > localversion.20-pkgname
+  echo "${pkgbase#linux}-Laniakea" > localversion.20-pkgname
 
   local src
   for src in "${source[@]}"; do
